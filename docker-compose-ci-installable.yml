@@ -1,0 +1,39 @@
+version: '3.0'
+services:
+  db:
+    image: postgres:11
+    container_name: db_project_hr_12
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_DB=project_hr_12_ci
+    networks:
+      default:
+        aliases:
+          - db_project_hr_12
+
+  odoo:
+    image: docker-hub.trobz.com:443/dev/trobz-odoo-project:12.0
+    container_name: odoo_project_hr_12
+    command: bash -c "while ! nc -q 1 db_project_hr_12 5432 </dev/null; do sleep 1; done && /opt/openerp/openerp-project_hr_12-dev/odoo/odoo-bin --config /opt/openerp/openerp-project_hr_12-dev/config/docker.conf --logfile /dev/stdout --stop-after-init -d project_hr_12_ci -i project_hr_12_module"
+    environment:
+      - USER=openerp
+      - USER_ID=$UID
+      # requests comes with its own bundle: /usr/local/lib/python2.7/dist-packages/requests/cacert.pem
+      # use the system bundle instead:
+      - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+      - KWKHTMLTOPDF_SERVER_URL=MOCK
+    networks:
+      default:
+        aliases:
+          - odoo_project_hr_12
+    depends_on:
+      - db
+    # Set privileged mode to true only when you need to use strace
+    # privileged: true
+    volumes:
+      - ./:/opt/openerp/openerp-project_hr_12-dev
+
+networks:
+  default:
+    driver: bridge

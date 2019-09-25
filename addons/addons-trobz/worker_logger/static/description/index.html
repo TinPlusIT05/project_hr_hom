@@ -1,0 +1,27 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Odoo Multi Process Logger</h2>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span10">
+            <p class="oe_mt32">
+                <ul>
+                    <li>Normally, default logger of Odoo can't handle log very well with multi-process (workers).
+                    So this module helps to replace native Odoo log handler by another that can log well in
+                    multi-process environment
+                    </li>
+                    <li>To use this module, should do following steps:
+                        <ul>1. Install library <a href="https://pypi.python.org/pypi/safe_logger/1.0.0"><b>safe_logger</b></a>
+                        (define it in requirements in your project or install it directly)</ul>
+                        <ul>2. Load it when starting Odoo server by <b>--load worker-logger</b></ul>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>

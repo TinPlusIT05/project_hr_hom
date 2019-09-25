@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.python.pydev.debug.regularLaunchConfigurationType">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/project_hr_12/odoo/openerp-server"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="false"/>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="PYTHONPATH" value="/opt/openerp/.local/share/virtualenvs/odoo-12.0/lib/python3.5.4/site-packages/:/opt/openerp/.local/share/virtualenvs/project_hr_12/lib/python3.5.4/site-packages/"/>
+</mapAttribute>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc:project_hr_12/odoo/openerp-server}"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_OTHER_WORKING_DIRECTORY" value=""/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="--load web,dbfilter_from_header --addons-path /opt/openerp/code/project_hr_12/addons/addons-trobz,/opt/openerp/code/project_hr_12/addons/server-tools,/opt/openerp/code/project_hr_12/addons/web-addons,/opt/openerp/code/project_hr_12/project,/opt/openerp/code/project_hr_12/odoo/addons"/>
+<stringAttribute key="org.python.pydev.debug.ATTR_INTERPRETER" value="__default"/>
+<stringAttribute key="org.python.pydev.debug.ATTR_PROJECT" value="project_hr_12"/>
+<stringAttribute key="process_factory_id" value="org.python.pydev.debug.processfactory.PyProcessFactory"/>
+</launchConfiguration>

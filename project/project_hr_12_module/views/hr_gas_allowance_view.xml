@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_gas_allowance_tree" model="ir.ui.view">
+            <field name="name">view.hr.gas.allowance.tree</field>
+            <field name="model">hr.gas.allowance</field>
+            <field name="arch" type="xml">
+                <tree string="Gas Allowance Tree" editable="bottom">
+                    <field name="name" readonly="1"/>
+                    <field name="from_km" required="1"/>
+                    <field name="to_km"/>
+                    <field name="allowance_amount" required="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_hr_gas_allowance" model="ir.actions.act_window">
+            <field name="name">Gas Allowance</field>
+            <field name="res_model">hr.gas.allowance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

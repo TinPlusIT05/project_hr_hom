@@ -1,0 +1,1 @@
+safe-logger==1.3.1

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_hr_employee_form_inherit" model="ir.ui.view">
+        <field name="name">view.hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_id']" position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='coach_id']" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </xpath>
+            <xpath expr="//page[@name='personal_information']" position="after">
+                <page string="Job History">
+                    <field name="job_history_ids" nolabel="1" readonly="1">
+                        <tree string="Job History">
+                            <field name="job_id" readonly="1"/>
+                            <field name="effective_date" readonly="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='km_home_work']" position="after">
+                <field name="allowance_amount" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='km_home_work']" position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

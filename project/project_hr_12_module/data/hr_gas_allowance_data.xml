@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="data_the_first" model="hr.gas.allowance">
+        <field name="from_km">0</field>
+        <field name="to_km">9</field>
+        <field name="allowance_amount">100000</field>
+    </record>
+    <record id="data_the_second" model="hr.gas.allowance">
+        <field name="from_km">10</field>
+        <field name="to_km">15</field>
+        <field name="allowance_amount">120000</field>
+    </record>
+    <record id="data_the_third" model="hr.gas.allowance">
+        <field name="from_km">16</field>
+        <field name="to_km">20</field>
+        <field name="allowance_amount">150000</field>
+    </record>
+    <record id="data_the_fourth" model="hr.gas.allowance">
+        <field name="from_km">21</field>
+        <field name="to_km">0</field>
+        <field name="allowance_amount">180000</field>
+    </record>
+</odoo>

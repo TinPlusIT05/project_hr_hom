@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <function name="start" model="post.object.trobz.base"/>
+    <function name="start" model="post.install.security.trobz.base.module"/>
+    <function name="start" model="post.object.trobz.report"/>
+</odoo>

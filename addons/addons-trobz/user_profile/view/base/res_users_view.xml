@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_users_view_form_inherit_profile_group" model="ir.ui.view">
+        <field name="name">res.users.view.form.inherit.profile.group</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div[hasclass('oe_title')]/group" position="inside">
+                <field name="group_profile_id" attrs="{'required': [('id','!=',2)], 'invisible': [('id','=',2)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_users_view_tree_inherit_profile_group" model="ir.ui.view">
+        <field name="name">res.users.view.tree.inherit.profile.group</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="/tree/field[@name='login']" position="after">
+                <field name="group_profile_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_users_view_search_inherit_profile_group" model="ir.ui.view">
+        <field name="name">res.users.view.search.inherit.profile.group</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_search"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="group_profile_id"/>
+                <group expand="0" string="Group By...">
+                    <filter name="is_profile" string="Profile" context="{'group_by': 'group_profile_id'}"/>
+                </group>
+            </field>
+        </field>
+    </record>
+</odoo>

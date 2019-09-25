@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ODOO V12 has upgrade feature -->
+    <!-- Add button upgrade module immediately from kanban view -->
+    <!-- <record id="module_view_kanban_inherit" model="ir.ui.view">
+        <field name="name">module.view.kanban.inherit</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_view_kanban" />
+        <field name="arch" type="xml">
+            <span t-if="installed" position="replace">
+                <button type="object" class="btn btn-primary pull-right btn-sm"
+                    name="button_immediate_upgrade" states="installed">Upgrade</button>
+            </span>
+        </field>
+    </record>
+
+    <record id="view_installed_modules_search" model="ir.ui.view">
+        <field name="name">view.installed.modules.search</field>
+        <field name="model">ir.module.module</field>
+        <field name="arch" type="xml">
+            <search string="Search modules">
+                <field name="name" filter_domain="['|', '|', ('summary', 'ilike', self), ('shortdesc', 'ilike', self), ('name',
+                    'ilike', self)]" string="Module"/>
+                <filter name="app" string="Apps" domain="[('application', '=', 1)]"/>
+                <filter name="extra" string="Extra" domain="[('application', '=', 0)]"/>
+                <separator/>
+                <field name="category_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Author" domain="[]" context="{'group_by':'author'}"/>
+                    <filter string="Category" domain="[]" context="{'group_by':'category_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <record id="action_installed_modules" model="ir.actions.act_window">
+        <field name="name">Install Modules</field>
+        <field name="res_model">ir.module.module</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('state','=','installed')]</field>
+        <field name="context">{'search_default_app':1}</field>
+    </record>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_users_view_form_inherit_adjust_password" model="ir.ui.view">
+        <field name="name">res.users.view.form.inherit.adjust.password</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div[hasclass('oe_title')]/group" position="before">
+                <label for="new_password" class="oe_edit_only"/>
+                <!-- We use field "new_password" instead of "password" becasue
+                we don't want content of field "password" will be shown up to users -->
+                <h2><field name="new_password" password="True" attrs="{'required': [('id','=',False)]}"/></h2>
+            </xpath>
+            <field name="notification_type" position="before">
+                <field name="email" required="1"/>
+            </field>
+        </field>
+    </record>
+</odoo>
